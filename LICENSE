@@ -1,0 +1,28 @@
+### License Comparison
+## License for bunny_file Code
+# Overview
+The bunny_file code is responsible for processing various file types such as PDFs, Word documents, images, videos, and audio files. It uses libraries like PyPDF2, python-docx, python-pptx, pandas, moviepy, Pillow, and speech_recognition, along with AssemblyAI for audio transcription.
+
+# License
+The bunny_file code is licensed under the MIT License. The following terms apply:
+
+Permission is granted to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software.
+The software is provided "as is," without warranty of any kind.
+Licensing Terms
+Permission is granted, free of charge, to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software.
+The software is provided "as is," without warranty of any kind. The authors are not liable for any damages arising from the use of the software.
+
+## License for Streamlit Code
+
+# Overview
+The Streamlit code provides a web-based application to process and analyze files. It incorporates file upload options, camera input, URL input, and integrates with Google’s Generative AI. The application includes functionalities for image display, video playback, audio playback, and text generation based on user input.
+
+#License
+The Streamlit code is licensed under the MIT License. The following terms apply:
+
+Permission is granted to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software.
+The software is provided "as is," without warranty of any kind.
+
+# Licensing Terms
+Permission is granted, free of charge, to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software.
+The software is provided "as is," without warranty of any kind. The authors are not liable for any damages arising from the use of the software.
