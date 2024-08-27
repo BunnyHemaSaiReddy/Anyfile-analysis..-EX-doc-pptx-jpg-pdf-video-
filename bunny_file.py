@@ -5,15 +5,15 @@ import pandas as pd
 from moviepy.editor import VideoFileClip
 import PIL.Image as Image
 import speech_recognition as sr
-import streamlit as st
 import assemblyai as aai
+import io
 
 def transcribe_audio(audio_file_path):
     try:
         aai.settings.api_key = "28108f8b185a472c8062dc14b789b18e"
         transcriber = aai.Transcriber()
         transcript = transcriber.transcribe(audio_file_path)
-        st.write(transcript.text)
+        #st.write(transcript.text)
         return transcript.text
     except Exception:
         pass
@@ -53,20 +53,16 @@ def process_file(uploaded_file):
     
     # elif file_type.startswith('video/'):
     #     #st.video(uploaded_file)
-    #     with tempfile.NamedTemporaryFile(delete=False, suffix=".mp4") as temp_video_file:
-    #         temp_video_file.write(uploaded_file.getbuffer())
-    #         temp_video_file_path = temp_video_file.name
-    #     video = VideoFileClip(temp_video_file_path)
-    #     with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio_file:
-    #         audio_path = temp_audio_file.name
-    #         video.audio.write_audiofile(audio_path)
-    #     transcript = transcribe_audio(audio_path)
+    #     video = VideoFileClip(io.BytesIO(uploaded_file.read()))
+    #     audio = video.audio
+    #     audio_buffer = io.BytesIO()
+    #     audio.write_audiofile(audio_buffer)
+    #     audio_buffer.seek(0)
+    #     transcript = transcribe_audio(audio_buffer)
     #     return transcript, 'video'
     
     elif file_type.startswith('audio/'):
         #st.audio(uploaded_file)
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio_file:
-            temp_audio_file.write(uploaded_file.getbuffer())
-            temp_audio_file_path = temp_audio_file.name
-        transcript = transcribe_audio(temp_audio_file_path)
+        audio_buffer = io.BytesIO(uploaded_file.read())
+        transcript = transcribe_audio(audio_buffer)
         return transcript, 'audio'
