@@ -25,7 +25,7 @@ def fileAnalysis():
         img__ = st.select_slider("Choose an option:", ["Camera", "Device", "URL"], value="Device")
     
     if img__ == "Device":
-        img_name = st.file_uploader("Upload the file from the computer:", type=['pdf', 'xls', 'xlsx', 'doc', 'docx', 'ppt', 'pptx', 'jpg', 'jpeg', 'png', 'mp4', 'avi', 'mov','mp3','wav'])
+        img_name = st.file_uploader("Upload the file from the computer:", type=['pdf', 'xls', 'xlsx', 'doc', 'docx', 'ppt', 'pptx', 'jpg', 'jpeg', 'png','mp3','wav'])
         if img_name:
             content, file_type = bunny_file.process_file(img_name)
             if content:
@@ -54,20 +54,19 @@ def fileAnalysis():
             col, _ = st.columns(2)
             with col:
                 st.image(content, use_column_width=True)
-        elif file_type == 'video':
-            col, _ = st.columns(2)
-            with col:
-                st.video(img_name)
-            content="Ellobrate the audio text,what is the audio described"
+        # elif file_type == 'video':
+        #     col, _ = st.columns(2)
+        #     with col:
+        #         st.video(img_name)
+        #     content="Ellobrate the audio text,what is the audio described"
         elif file_type == 'audio':
             st.audio(img_name)
         else:
             st.markdown("### Document Uploaded Sucessfully")
             #st.text(content)
         
-        if st.button("New attempt"):
-            st.rerun()
-        if file_type!='video':
+        
+        if file_type:
             chat_c = st.radio("", ("Text📄", "Speak🎤"))
             st.session_state.img_input = ""
             
@@ -101,5 +100,6 @@ def fileAnalysis():
                     time.sleep(0.02)
             
             st.write_stream(generate)
-
+            if st.button("New attempt"):
+                st.rerun()
 fileAnalysis()
