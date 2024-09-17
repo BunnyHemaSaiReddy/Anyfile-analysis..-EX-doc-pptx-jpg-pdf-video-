@@ -1,5 +1,7 @@
 streamlit
-pyaudio==0.2.13
+path_to_downloaded_wheel_file
+PyAudio‑0.2.13‑cp311‑cp311‑win_amd64.whl
+
 Pillow>=10.0.0
 requests>=2.31.0
 PyPDF2>=3.0.1
