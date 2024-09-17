@@ -9,5 +9,6 @@ pandas>=2.0.3
 openpyxl>=3.1.2
 assemblyai
 moviepy
+pyaudio
 SpeechRecognition
 
