@@ -1,4 +1,5 @@
-streamlit>=1.25.0
+streamlit
+pyaudio==0.2.13
 Pillow>=10.0.0
 requests>=2.31.0
 PyPDF2>=3.0.1
@@ -9,6 +10,5 @@ pandas>=2.0.3
 openpyxl>=3.1.2
 assemblyai
 moviepy
-pyaudio
 SpeechRecognition
 
