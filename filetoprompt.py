@@ -34,12 +34,13 @@ def fileAnalysis():
     elif img__ == "Camera":
         img = st.camera_input("Enter the camera input:")
         if img:
-            img = Image.open(img)
+            content = Image.open(img)
+            file_type='image'
             flag = 1
     
     elif img__ == 'URL':
         st.markdown("### :rainbow[Make sure that you are providing the correct URL]")
-        input_url = st.text_input("Enter the URL:")
+        input_url = st.text_input("Enter the URL: \n Note :Only use for the image url")
         if input_url:
             try:
                 req = requests.get(input_url)
