@@ -45,8 +45,10 @@ def fileAnalysis():
             try:
                 req = requests.get(input_url)
                 byte = io.BytesIO(req.content)
-                img = Image.open(byte)
+                content = Image.open(byte)
+                file_type='image'
                 flag = 1
+
             except Exception as e:
                 st.warning("Provide the correct URL - Hint: check whether the link ends with jpg or png and starts with http:// or https://")
 
