@@ -6,6 +6,7 @@ import asyncio
 import time
 import google.generativeai as genai
 import bunny_file
+import bunny_key as bk
 import speech_recognition as sr
 
 def speak():
@@ -17,7 +18,7 @@ def speak():
     
 def fileAnalysis():
     flag = 0
-    api = 'AIzaSyCBHTmgKXbiputUhfU9PlFUufQYVGqsMHs'
+    api = bk.api_gem
     genai.configure(api_key=api)
     img_model = genai.GenerativeModel('gemini-1.5-flash')
     
