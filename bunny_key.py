@@ -15,12 +15,12 @@ cor=con.cursor()
 # cor.execute(ins)
 # con.commit()
 cor.execute("select * from secret;")
-r=cor.fetchall()
+r=cor.fetchone()
 con.close()
 # api_key=r[0]+'FzBzcZX'
 # access_id= r[1]+'VKZLQISHY'
 # app_pass=r[2]+' fpvu uwlr'
-app_email=r[3]
+#app_email=r[3]
 api_key=r[0]
 api_gem=r[1]
 access_id= 'AKIAQIJRRWVLLQUNDOMV'
