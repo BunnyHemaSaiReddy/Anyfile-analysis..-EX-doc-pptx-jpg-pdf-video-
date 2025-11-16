@@ -2,7 +2,6 @@ from PyPDF2 import PdfReader
 import docx
 from pptx import Presentation
 import pandas as pd
-from moviepy.editor import VideoFileClip
 import PIL.Image as Image
 import speech_recognition as sr
 import assemblyai as aai
@@ -66,3 +65,4 @@ def process_file(uploaded_file):
         audio_buffer = io.BytesIO(uploaded_file.read())
         transcript = transcribe_audio(audio_buffer)
         return transcript, 'audio'
+
