@@ -18,9 +18,9 @@ def speak():
     
 def fileAnalysis():
     flag = 0
-    api = bk.api_gem
+    api = "AIzaSyCNDmLZftLXyqEFaghwN-TbIunypdBWH9g"
     genai.configure(api_key=api)
-    img_model = genai.GenerativeModel('gemini-1.5-flash')
+    img_model = genai.GenerativeModel('gemini-2.5-flash')
     
     with st.sidebar:
         img__ = st.select_slider("Choose an option:", ["Camera", "Device", "URL"], value="Device")
@@ -107,3 +107,4 @@ def fileAnalysis():
             if st.button("New attempt"):
                 st.rerun()
 fileAnalysis()
+
